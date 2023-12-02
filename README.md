@@ -31,3 +31,31 @@ While FastText, GloVe, and Word2Vec are effective for many natural language proc
 
 Lack of Contextual Information: FastText, GloVe, and Word2Vec generate static embeddings and do not consider the contextual information of words. This limitation can affect their performance in tasks that require an understanding of word meaning in different contexts.
 Inability to Capture Long-range Dependencies: BERT's attention mechanism allows it to capture long-range dependencies between words in a sentence, providing a more comprehensive understanding compared to traditional word embeddings. This is especially important since the descriptions arguably long.
+
+
+## Milvus Database Setup and Job Posting Data Deduplication
+
+### Introduction
+
+This repository outlines the process of setting up a Milvus database on a notebook, utilizing Docker for managing the Milvus database. The project focuses on storing and managing job posting data, implementing a deduplication mechanism to avoid storing duplicate entries. The goal is to demonstrate the efficiency of Milvus, particularly in handling large datasets and employing approximate nearest neighbors (ANN) architecture to enhance search performance.
+
+
+### Dockerization
+
+Docker is used to containerize the Milvus database, making it easily deployable and reproducible. The provided Dockerfile ensures a consistent environment for running Milvus.
+
+### Connectivity Challanges
+
+The initial strategy involved developing a FastAPI application that receives a description, extracts its embeddings, checks the database for duplicates, and adds the description to the database if it's not a duplicate. However, we encountered a setback when attempting to establish a connection to Mulvis from another Docker container, ultimately leading to an unsuccessful implementation.
+
+## Setup Milvus Docker
+
+### Start Milvus
+```sudo docker-compose up -d```
+
+
+
+
+
+
+
