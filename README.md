@@ -32,6 +32,17 @@ While FastText, GloVe, and Word2Vec are effective for many natural language proc
 Lack of Contextual Information: FastText, GloVe, and Word2Vec generate static embeddings and do not consider the contextual information of words. This limitation can affect their performance in tasks that require an understanding of word meaning in different contexts.
 Inability to Capture Long-range Dependencies: BERT's attention mechanism allows it to capture long-range dependencies between words in a sentence, providing a more comprehensive understanding compared to traditional word embeddings. This is especially important since the descriptions arguably long.
 
+## How parameters are decided?
+
+### Threshold
+
+In cases where precise matches are crucial, a lower threshold may be warranted. However, my observation of the data led me to believe that a threshold of 0.2 strikes an appropriate balance for the particular use case. The decision-making process involved extensive empirical testing. I experimented with different threshold values, evaluating their impact on the identification of similar items. Through this iterative process, I gauged the performance of the system and converged on a threshold that maximizes the utility of the similarity search.
+
+### Milvus Parameters
+
+The choice of "L2" metric and the nprobe parameter in search_params reflects a conscious effort to balance recall and search efficiency. A value of 16 suggests a middle ground, aiming for reasonably accurate results without sacrificing too much on search speed.
+The use of "IVF_FLAT" in index_params indicates a preference for the Inverted File structure with Flat indexing. This is a well-suited strategy for large-scale vector databases, providing an efficient trade-off between storage requirements and search performance.
+
 
 ## Milvus Database Setup and Job Posting Data Deduplication
 
