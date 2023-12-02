@@ -65,8 +65,3 @@ The initial strategy involved developing a FastAPI application that receives a d
 ```sudo docker-compose up -d```
 
 
-
-
-
-
-
