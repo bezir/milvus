@@ -43,6 +43,10 @@ In cases where precise matches are crucial, a lower threshold may be warranted. 
 The choice of "L2" metric and the nprobe parameter in search_params reflects a conscious effort to balance recall and search efficiency. A value of 16 suggests a middle ground, aiming for reasonably accurate results without sacrificing too much on search speed.
 The use of "IVF_FLAT" in index_params indicates a preference for the Inverted File structure with Flat indexing. This is a well-suited strategy for large-scale vector databases, providing an efficient trade-off between storage requirements and search performance.
 
+## Other Use Cases
+  1) Discovering similar job opportunities.
+  2) Recommending other suitable positions based on the applied job description.
+  3) Highlighting distinctive job descriptions/requirements for job posters compared to other similar positions
 
 ## Milvus Database Setup and Job Posting Data Deduplication
 
